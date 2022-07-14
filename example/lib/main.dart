@@ -23,7 +23,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -34,9 +33,9 @@ class _MyAppState extends State<MyApp> {
     try {
       final thumbnailPath = await getCacheDir();
       platformVersion = await MediaThumbnail.videoThumbnail(
-          "https://jabil-jpn3-dev.s3.ap-southeast-1.amazonaws.com/event/7e7e93a0-f905-11ec-b8f2-6ff232c1a3fc/byiy5odu.sen.mp4?X-Amz-Expires=3600&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAU2QVTTS2U6WVZUJQ/20220713/ap-southeast-1/s3/aws4_request&X-Amz-Date=20220713T103112Z&X-Amz-SignedHeaders=host&X-Amz-Signature=ea02fd292c9fba2518b0ef0338de3e3969e9c567bcdcc0f0c927359170f74aca",
+          "https://jabil-jpn3-dev.s3.ap-southeast-1.amazonaws.com/event/7e7e93a0-f905-11ec-b8f2-6ff232c1a3fc/byiy5odu.sen.mp4?X-Amz-Expires=3600&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAU2QVTTS2U6WVZUJQ/20220714/ap-southeast-1/s3/aws4_request&X-Amz-Date=20220714T024045Z&X-Amz-SignedHeaders=host&X-Amz-Signature=47e458e9d0ed89a6abbf50ef129eadac77af6604ab0bf6907d20a1761e008c6d",
           "$thumbnailPath/xx.jpg");
-    } catch (ex){
+    } catch (ex) {
       debugPrint(ex.toString());
     }
 
@@ -57,9 +56,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
           actions: [
-            InkWell(onTap: (){
-              initPlatformState();
-            }, child: const Text("Image"))
+            InkWell(
+                onTap: () {
+                  initPlatformState();
+                },
+                child: const Text("Image"))
           ],
         ),
         body: Center(
