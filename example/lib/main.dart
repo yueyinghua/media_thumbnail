@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     try {
       final thumbnailPath = await getCacheDir();
       platformVersion = await MediaThumbnail.videoThumbnail(
-          "https://jabil-jpn3-dev.s3.ap-southeast-1.amazonaws.com/event/7e7e93a0-f905-11ec-b8f2-6ff232c1a3fc/byiy5odu.sen.mp4?X-Amz-Expires=3600&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAU2QVTTS2U6WVZUJQ/20220714/ap-southeast-1/s3/aws4_request&X-Amz-Date=20220714T024045Z&X-Amz-SignedHeaders=host&X-Amz-Signature=47e458e9d0ed89a6abbf50ef129eadac77af6604ab0bf6907d20a1761e008c6d",
+          "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
           "$thumbnailPath/xx.jpg");
     } catch (ex) {
       debugPrint(ex.toString());

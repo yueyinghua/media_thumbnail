@@ -1,7 +1,7 @@
 name: media_thumbnail
-description: A new Flutter plugin project.
+description: Make a thumbnail.
 version: 0.0.1
-homepage:
+homepage: https://github.com/yueyinghua/media_thumbnail
 
 environment:
   sdk: ">=2.17.5 <3.0.0"
