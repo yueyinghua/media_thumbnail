@@ -14,9 +14,7 @@ public class SwiftMediaThumbnailPlugin: NSObject, FlutterPlugin {
             let args = call.arguments as! NSDictionary;
             let url = args["url"] as! String;
             let outPath = args["outPath"] as! String;
-            print(outPath);
             let quality = args["quality"] as! Float;
-            print("quality:\(quality)");
             self.createThumbnailForVideo(atURL: url, completion: {(thumb) in
                 if(thumb==nil) {result(nil); return;}
                 let thumbData = thumb!.jpegData(compressionQuality: CGFloat(quality)/100); // 转Data
@@ -30,7 +28,7 @@ public class SwiftMediaThumbnailPlugin: NSObject, FlutterPlugin {
     }
     func createThumbnailForVideo(atURL videoURL: String , completion : @escaping (UIImage?)->Void) {
         var asset: AVAsset?;
-        if(videoURL.hasPrefix("/")){            
+        if(videoURL.hasPrefix("/")){
             asset = AVAsset(url: URL.init(fileURLWithPath:videoURL));
         }else{
             asset = AVAsset(url: URL.init(string: videoURL)!);
