@@ -138,11 +138,9 @@ public class MediaThumbnailPlugin implements FlutterPlugin, MethodCallHandler {
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
-            try {
+  
                 retriever.release();
-            } catch (RuntimeException ex) {
-                ex.printStackTrace();
-            }
+           
         }
 
         return bitmap;
